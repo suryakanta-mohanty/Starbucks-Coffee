@@ -223,3 +223,16 @@ header nav ul{
 .carousel .list .item.other__2{
   pointer-events: none;
 }
+
+.carousel .list .item.active .main_content{
+  animation: showContent 1s ease-in-out 1 forwards;
+}
+
+@keyframes showContent {
+  from{
+    clip-path: circle(0% at 70% 50%);
+
+  } to{
+    clip-path: circle(100% at 70% 50%);
+  }
+}
