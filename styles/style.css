@@ -236,3 +236,74 @@ header nav ul{
     clip-path: circle(100% at 70% 50%);
   }
 }
+
+.next .item.other__1{
+  z-index: 1;
+}
+
+.next .item .coffee_image img,
+.next .item .coffee_image figcaption{
+  animation: effectNext 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes effectNext {
+  from{
+    transform: translateX(calc(var(--transform-from)));
+
+  } to{
+    transform: translateX(calc(var(--transform-from) - var(--w-image)));
+  }
+}
+
+.next .item.active .coffee_image{
+  --transform-from: var(var(--w-image));
+}
+
+.next .item.other__1 .coffee_image{
+  z-index: 3;
+  --transform-form: 0px;
+  overflow: hidden;
+}
+
+.next .item.other__2 .coffee_image{
+  z-index: 3;
+  --transform-from: calc(var(--w-image) * 2);
+}
+
+.arrows{
+  z-index: 10;
+}
+
+/* prev  */
+.prev .list .item .coffee_image img,
+.prev .list .item .coffee_image figcaption{
+  animation: effectPrev 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes effectPrev{
+  from{
+    transform: translateX(calc(var(--transform-form)));
+
+  } to{
+    transform: trasnlateX(calc(var(--transform-form) + var(--w-image)));
+  }
+}
+
+.prev .list .item.active .coffee_image{
+  --transform-form: calc(var(--w-image) * -1);
+  overflow: hidden;
+}
+
+.prev .list .item.other__1 .coffee_image{
+  --transform-from: 0px;
+  z-index: 3;
+}
+
+.prev .list .item.other__2 .coffee_image{
+  z-index: 3;
+  --transform-from: var(--w-image);
+}
+
+.prev .list .item.other__2 .mian_conatent{
+  opacity: 0;
+}
